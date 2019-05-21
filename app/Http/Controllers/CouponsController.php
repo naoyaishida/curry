@@ -36,38 +36,40 @@ class CouponsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Coupon $coupon)
+    public function store(Request $request)
     {
-        $this->validate(request(),[
+        $this->validate($request,[
            'name'=>'required',
            'coupon'=>'required',
-           'info'=>'required|min:200',
+           'info'=>'required',
            'time'=>'required',
            'good'=>'required',
            'area'=>'required',
-           'image'=>'required|image',
+           'image'=>'required',
         ]);
 
-        $user_id = Auth::id();
-
-        $coupon = Coupon::create([
-        'name' => $request->name,
-        'area' => $request->area,
-        'info' => $request ->info,
-        'good' => $request ->good,
-        'time' => $request ->time,
-        'coupon' => $request ->coupon,
-        // 'user_id'=>$user_id,
-        // 'coupon_id' => $request->coupon_id,
-        // 'image'=> 'uploads/posts/'.$image_new_name,
-        ]);
+        // $user_id = Auth::id();
 
         $image =$request->image;
         $image_new_name = time().$image->getClientOriginalName();
         $image->move('uploads/coupons/',$image_new_name);
-        $coupon->image ='uploads/coupons/'.$image_new_name;
+        // $coupon->image ='uploads/coupons/'.$image_new_name;
 
-        $coupon->save();
+        $coupon = Coupon::create([
+        'name' => $request->name,
+        'area' => $request->area,
+        'info' => $request->info,
+        'good' => $request->good,
+        'time' => $request->time,
+        'coupon' => $request->coupon,
+        // 'user_id'=>$user_id,
+        // 'coupon_id' => $request->coupon_id,
+        'image'=> 'uploads/posts/'.$image_new_name,
+        ]);
+
+
+
+        // $coupon->save();
 
         // $coupon->user()->attach($request->user);
         return redirect()->route('coupons.index');
