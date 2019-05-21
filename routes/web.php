@@ -59,7 +59,7 @@ Route::get('restaurant.index',[
 // Route::name('coupons.get')->put('coupons/{coupon}/get','CouponsController@get');
 
 Route::get('list',[
-    'uses'=>'UsersController@list',
+    'uses'=>'CouponsController@list',
     'as'=>'list'
 ]);
 

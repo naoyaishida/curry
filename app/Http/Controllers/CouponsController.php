@@ -68,7 +68,7 @@ class CouponsController extends Controller
         ]);
 
 
-       
+
 
         // $coupon->save();
             // オースから直接
@@ -156,6 +156,8 @@ class CouponsController extends Controller
     public function show2($id)
     {
         $coupon=Coupon::find($id);
+        $user_id = Auth::id();
+        $coupon->users()->attach($user_id);
         return view('coupons.show2',['coupon'=>$coupon]);
     }
 
@@ -169,6 +171,13 @@ class CouponsController extends Controller
     }
     public function restaurant(){
         return view('restaurant.index');
+    }
+
+    public function list(){
+        $user_id= Auth::id();
+        $coupons = User::find($user_id)->coupons()->get();
+       // dd($coupons);
+       return view('users.list',['coupons'=>$coupons]);
     }
 
 }
