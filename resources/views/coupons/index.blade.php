@@ -37,8 +37,6 @@ style="  width: 100%;
             店名：<strong>{{$coupon->name}}</strong>
             <br>
             住所：<strong>{{$coupon->area}}</strong>
-
-            <img width="300" height="200" src="https://map.yahooapis.jp/map/V1/static?appid=【APPID】&lat=35.681093831866455&lon=139.76716278230535&z=12&width=300&height=200&pointer=on">
         </p>
 
     <a href="{{route('coupons.show',['coupon'=>$coupon->id])}}" class="btn btn-outline-primary">View Post</a>

@@ -48,7 +48,7 @@ class CouponsController extends Controller
            'image'=>'required',
         ]);
 
-        // $user_id = Auth::id();
+        $user_id = Auth::id();
 
         $image =$request->image;
         $image_new_name = time().$image->getClientOriginalName();
@@ -64,14 +64,15 @@ class CouponsController extends Controller
         'coupon' => $request->coupon,
         // 'user_id'=>$user_id,
         // 'coupon_id' => $request->coupon_id,
-        'image'=> 'uploads/posts/'.$image_new_name,
+        'image'=> 'uploads/coupons/'.$image_new_name,
         ]);
 
 
+       
 
         // $coupon->save();
-
-        // $coupon->user()->attach($request->user);
+            // オースから直接
+        $coupon->users()->attach($user_id);
         return redirect()->route('coupons.index');
 
     }

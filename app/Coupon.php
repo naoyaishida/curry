@@ -9,7 +9,7 @@ class Coupon extends Model
 {
     protected $fillable = ['name','area','image','info','coupon','time','good'];
 
-    // public function user(){
-    //     return $this ->belongsToMany(User::class);
-    // }
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }
