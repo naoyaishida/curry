@@ -24,7 +24,7 @@ style="  width: 100%;
 
     <div class="card ">
 
-        <div class="card-header">
+        <div class="card-header" >
             <a href="{{route('coupons.show',['coupon'=>$coupon->id])}}">{{$coupon->title }}</a>
         </div>
 

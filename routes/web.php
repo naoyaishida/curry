@@ -63,6 +63,20 @@ Route::get('list',[
     'as'=>'list'
 ]);
 
+Route::get('users/premium',[
+    'uses'=>'CouponsController@premium',
+    'as'=>'premium'
+]);
+
+Route::get('/customer',[
+    'uses'=>'PremiumsController@index',
+    'as'=>'premium.checkout'
+]);
+
+Route::any('/premium',[
+    'uses'=>'PremiumsController@pay',
+    'as'=>'premium.checkout'
+]);
 // Route::get('/', function () {
 //     return view('welcome', ['coupons' => App\Coupon::all(), 'users' => App\User::all()]);
 // });

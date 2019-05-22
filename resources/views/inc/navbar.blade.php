@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-warning shadow-sm">
     <div class="container">
         {{-- <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -56,8 +56,8 @@
                              <p>獲得クーポンリスト</p>
                          </a>
 
-                         <a class="dropdown-item" href="{{route('list')}}">
-                            <p>過去履歴</p>
+                         <a class="dropdown-item" href="{{route('premium')}}">
+                            <p>プレミアム会員になる</p>
                         </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

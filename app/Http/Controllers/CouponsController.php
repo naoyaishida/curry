@@ -10,6 +10,10 @@ use Session;
 
 class CouponsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -179,5 +183,13 @@ class CouponsController extends Controller
        // dd($coupons);
        return view('users.list',['coupons'=>$coupons]);
     }
+
+    public function premium(){
+        $user_id= Auth::id();
+        // $coupons = User::find($user_id)->coupons()->get();
+       // dd($coupons);
+       return view('users.premium',['user_id'=>$user_id]);
+    }
+
 
 }

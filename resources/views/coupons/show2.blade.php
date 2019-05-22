@@ -42,9 +42,10 @@
 <div class="content">
     {{-- テキストセンターで真ん中配置 --}}
 <div class="text-center" >
+                <h1>クーポンを獲得しました</h1>
                 <img src="{{asset($coupon->image)}}" alt="{{$coupon->name}}"  class="text-center" width="50%" height="50%" >
-                <ins><h1 class="pt-5 display-1">クーポン内容</h1></ins>
-                <h1 class="pt-2">{{$coupon->coupon}}</h1>
+               <h3 class="pt-5">クーポン内容</h3>
+                <strong><h1 class="pt-2 ">{{$coupon->coupon}}</h1></strong>
                 <a href="{{route('coupons.index')}}"><button type="button" class="btn btn-warning btn-lg">トップへ戻る</button></a>
 </div>
 </div>

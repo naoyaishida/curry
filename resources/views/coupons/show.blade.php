@@ -20,9 +20,13 @@
     }
 
     .upper img{
-        height: 60%;
-        width: 60%;
+        height: 90%;
+        width: 90%;
 
+    }
+
+    .upper-button{
+        text-align: center;
     }
     </style>
 </head>
@@ -36,25 +40,35 @@
 
     <div class="container">
 
-        <div class="upper">
+        <div class="upper p-2">
 
-
-        {{-- インデックスページ以外はアセットを使ってコネクション    --}}
-            {{-- <div class="image"> --}}
-                <img src="{{asset($coupon->image)}}" alt="{{$coupon->title}}"  class="card-img-top">
-            {{-- </div> --}}
-
-            <div class="upper-right">
-            <div class="upper-text">
-            <h1>
-                {{$coupon->name}}
-                <br>
-                {{$coupon->coupon}}
-            </h1>
+            <div class="image" height="300px" width="300px">
+                    <h1> {{$coupon->name}}</h1>
+                <img src="{{asset($coupon->image)}}" alt="{{$coupon->title}}"  class="card-img-top" height="100%" width="100%">
             </div>
 
-            <div class="upper-button">
-                <a href="{{route('coupons.show2',['coupon'=>$coupon->id])}}"><button type="button" class="btn btn-primary btn-lg">GET COUPON</button></a>
+            <div class="upper-right pb-5 pl-5">
+            <div class="upper-text ">
+            <br>
+            <h4>クーポン内容</h4>
+            <strong><h1>{{$coupon->coupon}}</h1></strong>
+            </div>
+                <div id="map" style="width:400px; height:300px">
+
+                <script type="text/javascript" charset="utf-8" src="http://js.api.olp.yahooapis.jp/OpenLocalPlatform/V1/jsapi?appid=dj00aiZpPUNsQWxWeWNXbTlYbSZzPWNvbnN1bWVyc2VjcmV0Jng9OTc-"></script>
+                <script type="text/javascript">
+                window.onload = function(){
+                var ymap = new Y.Map("map");
+                ymap.drawMap(new Y.LatLng(35.66572, 139.73100), 17);
+                ymap.addControl(new Y.HomeControl());
+                ymap.addControl(new Y.LayerSetControl());
+                }
+                </script>
+                </div>
+
+
+            <div class="upper-button pt-3">
+                <a href="{{route('coupons.show2',['coupon'=>$coupon->id])}}"><button type="button" class="btn btn-warning btn-lg">クーポンを獲得</button></a>
             </div>
 
              </div>
@@ -66,7 +80,8 @@
 <a href="{{route('edit_blog_path',['blog'=>$blog->id])}}" class="btn btn-outline-info">Edit</a> --}}
 
 
-        <div class="info">
+        <div class="info pb-4">
+        <h2>お店情報</h2>
         {{$coupon->info}}
         </div>
 
