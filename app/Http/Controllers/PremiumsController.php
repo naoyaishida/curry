@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Stripe\Stripe;
 use Stripe\Charge;
+use App\User;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -25,6 +27,10 @@ class PremiumsController extends Controller
             'description' =>'有料会員になる',
             'source' => $token,
         ]);
+
+        $user = User::find(Auth::id());
+        $user->premium = 1;
+        $user->save();
 
 
 
