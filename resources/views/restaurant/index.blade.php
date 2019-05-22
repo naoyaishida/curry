@@ -88,10 +88,6 @@
   }
 
 
-
-
-
-
   .main-text button{
     position: absolute;
     top: 70%;

@@ -1,0 +1,275 @@
+
+#carouselExampleControls{
+    position: relative;
+  }
+
+
+  .main-text p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    font-size: 80px;
+    font-weight:500;
+    color: aliceblue;
+    /* text-align: center;
+    width: 100%; */
+  }
+
+  @media(max-width:670px)
+  {
+    .main-text p{
+      position: absolute;
+    top: 30%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    font-size: 22px;
+    font-weight:400;
+    color: aliceblue;
+  }
+
+
+  .main-text #button{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:10px;
+    font-size: 10px;
+    color: black;
+  }
+
+  .teaching-box{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .teaching-text h2{
+    font-size: 30px;
+  }
+
+  .teaching-text h4{
+    font-size: 15px;
+  }
+
+  .box2 span{
+    font-size:7px;
+    font-weight: 800;
+  }
+
+  .box2 p{
+    font-size:5px;
+    font-weight: 500;
+  }
+
+  }
+
+  .main-text button{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:10px;
+    font-size: 40px;
+    color: black;
+  }
+
+  #carouselExampleControls{
+      height: 80%;
+      width:100%;
+  }
+
+  .business{
+    height: 600px;
+    background-color:white;
+    text-align: center;
+  }
+
+  .teaching-box{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    text-align: center;
+
+  }
+
+  .box2{
+    background-color:orange;
+    height: 150px;
+    width: 400px;
+    margin: 0 10px 0 10px;
+  }
+
+  .teaching-text{
+    padding-top: 70px;
+  }
+
+  .teaching-text h2,h4{
+    color: black;
+  }
+
+  .teaching-text h2{
+    font-size: 80px;
+  }
+
+  .teaching-text h4{
+    font-size: 50px;
+  }
+  *{
+    box-sizing: border-box;
+  }
+
+  .box2 span{
+    font-size:30px;
+    font-weight: 800;
+  }
+
+  .box2 p{
+    font-size:25px;
+    font-weight: 500;
+  }
+
+  .conversation{
+    height: 400px;
+    background-color: #ebb94d;
+    margin-top: 50px;
+  }
+
+  .upper-side{
+    padding-top: 30px;
+    height: autp;
+    text-align: center;
+  }
+
+  .upper-side p{
+    color: white;
+    font-size: 28px;
+
+  }
+
+  #white{
+    background-color: white;
+    color: red;
+    width: auto;
+  }
+
+  .upper-side a{
+    border: 1px solid #da6b64;
+    background-color: #da6b64;
+    height: 100px;
+    width: 700px;
+    padding: 30px;
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 15px;
+  /* } */
+  }
+
+  .bottom-side{
+    padding-top: 40px;
+  }
+
+  .bottom-side p{
+    color: white;
+    font-size: 28px;
+    height: 40%;
+    text-align: center;
+  }
+
+  .conversation button{
+    padding: 30px 120px;
+      background-color: #da6b64;
+      border-radius: 50px;
+      margin: 45px auto;
+      width: 70%;
+      font-size: 28px;
+  }
+
+  footer{
+    background-color: white;
+  }
+
+  /* .twitter button{
+    width: 75px;
+    background: #4BB7E3;
+    color: white;
+    height: 22px;
+    padding: 1px;
+    border-radius: 5px;
+    font-size: 8px;
+  }
+
+  .face button{
+    width: 75px;
+    background: #5193D5;
+    color: white;
+    height: 22px;
+    padding: 1px;
+    border-radius: 5px;
+    font-size: 8px;
+  }
+  .facebook button{
+    width: 50px;
+    background: #5193D5 ;
+    color: white;
+    height: 22px;
+    padding: 1px;
+    border-radius: 5px;
+    font-size: 8px;
+  }
+  .face i{
+    font-size: 13px;
+    padding-right: 3px;
+  }
+  .twitter,.face,.facebook{
+    display: inline-block;
+  }
+  .sns{
+    position: absolute;
+    left: 42%;
+    top:1090px;
+  } */
+
+  /* ここから先はホームページ用 */
+
+  .coupon {
+    border: 5px dotted #bbb; /* Dotted border */
+    width: 80%;
+    border-radius: 15px; /* Rounded border */
+    margin: 0 auto; /* Center the coupon */
+    max-width: 600px;
+  }
+
+  .container {
+    padding: 2px 16px;
+    background-color: #f1f1f1;
+  }
+
+  .promo {
+    background: #ccc;
+    padding: 3px;
+  }
+
+  .expire {
+    color: red;
+  }
+

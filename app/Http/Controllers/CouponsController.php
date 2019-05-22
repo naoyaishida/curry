@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Coupon;
 use Auth;
 use App\User;
+use DB;
 use Session;
 
 class CouponsController extends Controller
@@ -21,7 +22,29 @@ class CouponsController extends Controller
      */
     public function index()
     {
-        return view('coupons.index',['coupons'=>Coupon::all()]);
+        // $users = DB::table('users')->where('premium',1)->get();
+        // dd($users);
+
+        $user = DB::table('users')->where('id', Auth::id())->where('premium', 1)->get();
+        // dd($user);
+        // このemptyファンクション
+        if(!$user->isEmpty()){
+            $coupons = Coupon::all();
+            return view('coupons.index')->with('coupons',$coupons);
+        }
+            // $coupons = Coupon::inRandomOrder()->limit(0);
+            // return view('coupons.index')->with('coupons',Coupon::take(3)->get());
+            // $coupons = DB::table('coupons')->offset(1)
+            //                                 ->limit(3)
+            //
+
+                $coupons = Coupon::take(3)->get();
+
+
+
+
+
+        return view('coupons.index')->with('coupons',$coupons);
     }
 
     /**
